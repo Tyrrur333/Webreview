@@ -1,0 +1,187 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+//ヘッダー
+header {
+  width: 100%;
+  z-index: 1;
+}
+
+.navbar {
+  margin-bottom: -60px;
+  z-index: 1;
+}
+
+.navbar-default {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.navbar-default:hover {
+  background-color: white;
+  transition: 0.5s;
+}
+
+.navbar-default:hover .navbar-nav > li > a {
+  color: #1F57D3;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #FBB272;
+}
+
+.fas {
+  margin-left: 2px;
+}
+
+//メイン
+main {
+  padding-bottom: 100px;
+}
+
+//メイントップ
+.top-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.jumbotron-extend {
+  background:url(0803DSCF5715.jpg) center no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 70vh;
+  min-height: 300px;
+}
+
+.jumbotron-extend::before{
+  content: ' ';
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.jumbotron-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}
+
+.jumbotron-extend h1 {
+  font-family: 'Noto Sans Japanese';
+  margin-bottom: 30px;
+  color: white;
+}
+
+.jumbotron-extend p {
+  font-family: 'Noto Sans Japanese';
+  margin-bottom: 10px;
+  color: white;
+}
+
+.jumbotron-extend .input-group {
+  margin-top: 40px;
+  width: 900px;
+}
+
+.jumbotron-extend .form-control {
+  height: 50px;
+}
+
+.jumbotron-extend .btn {
+  font-size: 18px;
+  height: 50px;
+}
+
+//右の最近の投稿
+.right-recent-posts {
+  margin-top: 20px;
+  margin-right: 100px;
+  width: 100%;
+}
+
+.right-recent-posts .input-group {
+  margin-left: 0;
+}
+
+.recent-contents {
+  border: solid 1px #ccc;
+  max-width: 300px;
+  height: auto;
+}
+
+
+
+//カテゴリから探す
+.find-category {
+  border: solid 1px #CCC;
+  height: 200px;
+
+}
+
+//新しく登録されたサイト
+.new-registration {
+}
+
+
+
+//フッター
+footer nav {
+  border-top: solid 1px #222;
+  background-color: white;
+  width: 100%;
+  height: 100px;
+}
+
+.footer-right {
+  display: inline-block;
+  float: right;
+  padding-top: 40px;
+}
+
+.footer-left {
+  display: inline-block;
+  float: left;
+  padding-top: 10px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul a {
+  margin: 20px;
+  text-decoration: none;
+  color: #1F57D3;
+}
+
+footer ul a:hover {
+  text-decoration: none;
+  color: #FBB272;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+
+
