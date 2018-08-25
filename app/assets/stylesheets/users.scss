@@ -8,6 +8,37 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 
+/* signup */
+.sign .container {
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
 
+.sign {
+  padding: 50px;
+  margin-bottom: 100px;
+}
+
+.sign-btn {
+  text-align: center;
+}
+
+.sign-btn .btn {
+  width: 150px;
+  border-radius: 100px;
+}
+
+//error
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0;
+  }
+}
+
+//alert
