@@ -14,4 +14,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( tops.scss )
 Rails.application.config.assets.precompile += %w( custom.scss )
 Rails.application.config.assets.precompile += %w( custom2.scss )
+Rails.application.config.assets.precompile += %w( users.scss )
 

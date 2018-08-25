@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@import "footer_fixed";
 
 body {
   padding: 0;
@@ -9,31 +10,6 @@ body {
   height: 100%;
 }
 
-//ヘッダー
-header {
-  width: 100%;
-}
-
-.navbar {
-}
-
-.navbar-default {
-  background-color: white;
-  border: none;
-  border-bottom: solid 1px #ccc;
-  border-radius: 1px;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: #1F57D3;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-  color: #FBB272;
-}
-
-.fas {
-  margin-left: 2px;
 }
 
 //お問い合わせ
@@ -77,52 +53,3 @@ header {
   float: right;
 }
 
-//フッター
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-}
-
-footer nav {
-  border-top: solid 1px #222;
-  background-color: white;
-  width: 100%;
-  height: 100px;
-}
-
-.footer-right {
-  display: inline-block;
-  float: right;
-  padding-top: 40px;
-}
-
-.footer-left {
-  display: inline-block;
-  float: left;
-  padding-top: 10px;
-}
-
-footer ul {
-  list-style: none;
-}
-
-footer ul a {
-  margin: 20px;
-  text-decoration: none;
-  color: #1F57D3;
-}
-
-footer ul a:hover {
-  text-decoration: none;
-  color: #FBB272;
-}
-
-.logo {
-  font-size: 24px;
-}
-
-.logo:hover {
-  text-decoration: none;
-}

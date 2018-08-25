@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'custom2',  :media => "all" ,'data-turbolinks-track': 'reload' %>
+
 <!--header-->
 <header>
   <div class="header">
@@ -15,7 +17,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to(content_tag(:i, 'ログイン',         class: 'fas fa-sign-in-alt'), '#') %></li>
-            <li><%= link_to(content_tag(:i, '新規登録',         class: 'fas fa-user-plus'), '#') %></li>
+            <li><%= link_to(content_tag(:i, '新規登録',         class: 'fas fa-user-plus'), signup_path) %></li>
             <li><%= link_to(content_tag(:i, 'Webサービスの登録', class: 'fas fa-plus-square'), '#') %></li>
           </ul>
         </div><!--/.nav-collapse -->
