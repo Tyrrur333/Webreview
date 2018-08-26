@@ -11,28 +11,52 @@ body {
   box-sizing: border-box;
 }
 
-/* signup */
-.sign .container {
+/* signup, login */
+.sign .container, .login .container {
   max-width: 500px;
   padding: 20px;
   border: 1px solid #ccc;
 }
 
-.sign {
+.sign, .login {
   padding: 50px;
   margin-bottom: 100px;
 }
 
-.sign-btn {
+.sign-btn, .login-btn {
   text-align: center;
 }
 
-.sign-btn .btn {
-  width: 150px;
+.sign-btn .btn, .login-btn .btn {
+  width: 160px;
   border-radius: 100px;
 }
 
-//error
+.signup-btn, .login-btn {
+  text-align: center;
+  margin-top: 20px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.login-btn {
+  margin-bottom: 80px;
+}
+
+.signup-btn {
+  border-top: solid 1px #ccc;
+  padding-top: 15px;
+}
+
+.signup-btn .btn {
+  width: 160px;
+  border-radius: 100px;
+
+}
+
+//signup_error
 #error_explanation {
   color: red;
   ul {
@@ -41,4 +65,4 @@ body {
   }
 }
 
-//alert
+
