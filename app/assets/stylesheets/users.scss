@@ -23,13 +23,20 @@ body {
   margin-bottom: 100px;
 }
 
+.checkbox-group {
+  text-align: center;
+  margin: 30px 0;
+}
+
 .sign-btn, .login-btn {
   text-align: center;
 }
 
 .sign-btn .btn, .login-btn .btn {
-  width: 160px;
+  width: 50%;
   border-radius: 100px;
+  font-size: 1vw;
+  letter-spacing: 3px;
 }
 
 .signup-btn, .login-btn {
@@ -48,12 +55,15 @@ body {
 .signup-btn {
   border-top: solid 1px #ccc;
   padding-top: 15px;
+  width: 100%;
+  a {
+    font-size: 1vw;
+  }
 }
 
 .signup-btn .btn {
-  width: 160px;
+  width: 50%;
   border-radius: 100px;
-
 }
 
 //signup_error
