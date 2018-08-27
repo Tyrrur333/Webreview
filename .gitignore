@@ -30,6 +30,9 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-.idea/workspace.xml
+/.idea
 
 database.yml
+vendor/cache/ruby/2.5.0/build_info/
+vendor/cache/ruby/2.5.0/doc/
+vendor/cache/ruby/2.5.0/gems/nokogiri-1.8.4/ext/nokogiri/tmp/

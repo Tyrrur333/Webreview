@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag 'users',  :media => "all" ,'data-turbolinks-track': 'reload' %>
+<h1 class="text-center">プロフィールの編集</h1>
+
+<div class="container">
+  <div class="profile-image col-md-4">
+    <!--    imageを表示-->
+  </div>
+  <div class="profile-contents col-md-6">
+    <ul>
+      <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages' %>
+
+        <li><%= f.label :name, "アカウント名" %></li>
+        <li><%= f.text_field :name, class: "form-control" %></li>
+
+        <li><%= f.label :introduction, "自己紹介" %></li>
+        <li><%= f.text_area :introduction, class: "form-control" %></li>
+
+        <li><%= f.submit "変更を保存する", class: "btn btn-success" %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

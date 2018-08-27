@@ -1,18 +1,22 @@
 <%= stylesheet_link_tag 'users',  :media => "all" ,'data-turbolinks-track': 'reload' %>
+<h1 class="text-center">プロフィール</h1>
+
 <div class="container">
-  <h1><%= @user.name %>のページ,<%= @user.email %></h1>
-  <br>
-  <br>
-
-  <br>
-
-  <br>
-  <br>
-
-  <br>
-  <br>
-
+  <div class="profile">
+    <div class="profile-image col-md-4">
+      <!--    imageを表示-->
+    </div>
+    <div class="profile-contents col-md-6">
+      <ul>
+        <li><%= @user.name %></li>
+        <li>自己紹介</li>
+        <li><%= @user.introduction %></li>
+        <li class="text-right"><%= link_to "プロフィールを編集する", edit_user_path(current_user) %></li>
+      </ul>
+    </div>
+  </div>
 </div>
+
 
 
 

@@ -2,16 +2,18 @@
 <footer>
   <div class="container">
     <nav>
-      <div class="footer-left">
-        <%= link_to 'Project name', root_path , :class => 'logo' %>
-        <p align="left">©2018  All Rights Reserved.</p>
-      </div>
-      <div class="footer-right">
-        <ul>
-          <%= link_to 'お問い合わせ', contact_path %>
-          <%= link_to 'プライバシーポリシー', privacy_policy_path %>
-          <%= link_to '利用規約', terms_of_use_path %>
-        </ul>
+      <div class="row">
+        <div class="footer-left com-sm-6">
+          <%= link_to 'Project name', root_path , :class => 'logo' %>
+          <p align="left">©2018  All Rights Reserved.</p>
+        </div>
+        <div class="footer-right col-sm-6">
+          <ul>
+            <li><%= link_to 'お問い合わせ', contact_path %></li>
+            <li><%= link_to 'プライバシーポリシー', privacy_policy_path %></li>
+            <li><%= link_to '利用規約', terms_of_use_path %></li>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
