@@ -1,12 +1,12 @@
-<%= stylesheet_link_tag 'users',  :media => "all" ,'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'user_profile',  :media => "all" ,'data-turbolinks-track': 'reload' %>
 <h1 class="text-center">プロフィール</h1>
 
 <div class="container">
   <div class="profile">
-    <div class="profile-image col-md-4">
-      <!--    imageを表示-->
+    <div class="profile-image col-md-4 center-block">
+      <%= image_tag @user.image_url.to_s %>
     </div>
-    <div class="profile-contents col-md-6">
+    <div class="profile-contents col-md-6 col-md-offset-1">
       <ul>
         <li><%= @user.name %></li>
         <li>自己紹介</li>

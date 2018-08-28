@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :introduction, length: { maximum: 500 }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  mount_uploader :image, ImageUploader
 
   class << self
     # 渡された文字列のハッシュ値を返す
