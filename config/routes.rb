@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
   get 'sessions/new'
   root 'tops#home'
 
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   post '/login',        to: 'sessions#create'
   delete '/logout',     to: 'sessions#destroy'
 
-  resources :users
+  resources :users,               only: [:show, :new, :create, :edit, :update]
   resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 end

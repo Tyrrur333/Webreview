@@ -12,7 +12,7 @@ module SessionsHelper
   end
 
   #渡されたユーザーがログイン済であればtrueを返す
-  def current_user?
+  def current_user?(user)
     user == current_user
   end
 
