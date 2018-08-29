@@ -59,57 +59,65 @@ main {
 
 //メイントップ
 .top-wrapper {
-  width: 100%;
-  position: relative;
-}
-
-.jumbotron-extend {
-  background:url(0803DSCF5715.jpg) center no-repeat;
+  padding: 180px 0 180px 0;
+  background-image: url(topwrapper_image.jpg);
   background-size: cover;
-  position: relative;
-  height: 70vh;
-  min-height: 300px;
   color: white;
+  text-align: center;
 }
 
-.jumbotron-extend::before{
-  content: ' ';
-  background-color: rgba(0,0,0,0.3);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.back-container {
-  position: relative;
-  top: 50%;
-  transform: translateY(50%);
-}
-
-.jumbotron-extend h1 {
+.top-wrapper h1 {
+  opacity: 0.9;
+  font-size: 46px;
+  letter-spacing: 5px;
   font-family: 'Noto Sans Japanese';
-  font-size: 64px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  @media (max-width:720px) {
+    font-size: 24px;
+  }
 }
 
-.jumbotron-extend p {
+.top-wrapper p {
   font-family: 'Noto Sans Japanese';
   font-size: 24px;
   margin-bottom: 10px;
+  @media (max-width:720px) {
+    font-size: 12px;
+  }
 }
 
-.jumbotron-extend .input-group {
+.top-wrapper .input-group {
   margin-top: 40px;
   width: 900px;
+  @media (max-width: 1000px) {
+    width: 700px;
+  }
+  @media (max-width: 360px) {
+    width: 360px;
+  }
 }
 
-.jumbotron-extend .form-control {
+.input-group .form-control {
+  width: 700px;
+  margin-left: 80px;
+  @media (max-width: 1000px) {
+    width: 400px;
+  }
+  @media (max-width: 600px) {
+    width: 200px;
+    margin-left: 150px;
+  }
+  @media (max-width: 360px) {
+    width: 100px;
+    margin-left: 100px;
+  }
+}
+
+.top-wrapper .form-control {
   height: 50px;
 }
 
-.jumbotron-extend .btn {
+.top-wrapper .btn {
   font-size: 18px;
   height: 50px;
 }
@@ -136,8 +144,9 @@ main {
 //カテゴリから探す
 .find-category {
   border: solid 1px #CCC;
-  height: 200px;
-
+  padding: 0;
+  height: 100px;
+  width: 100%;
 }
 
 //新しく登録されたサイト
