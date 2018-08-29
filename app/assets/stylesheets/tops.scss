@@ -147,23 +147,9 @@ main {
 
 
 //フッター
-footer nav {
-  border-top: solid 1px #222;
-  background-color: white;
-  width: 100%;
+footer {
   height: 100px;
-}
-
-.footer-right {
-  display: inline-block;
-  float: right;
-  padding-top: 40px;
-}
-
-.footer-left {
-  display: inline-block;
-  float: left;
-  padding-top: 10px;
+  margin-bottom: 10px;
 }
 
 footer ul {
@@ -181,6 +167,11 @@ footer ul a:hover {
   color: #FBB272;
 }
 
+.footer-contents ul li {
+  display: inline;
+  text-align: center;
+}
+
 .logo {
   font-size: 24px;
 }
@@ -188,6 +179,3 @@ footer ul a:hover {
 .logo:hover {
   text-decoration: none;
 }
-
-
-

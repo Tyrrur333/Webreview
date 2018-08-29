@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag 'appposts',  :media => "all" ,'data-turbolinks-track': 'reload' %>
+
+<div class="webservice-show container">
+  <div class="contents-top row">
+    <div class=" col-md-4">
+      <ul>
+        <li>Webサービス名</li>
+        <li>URL:</li>
+      </ul>
+    </div>
+    <div class=" col-md-4">
+      ★★★★★
+      <p>お気に入りに追加する</p>
+    </div>
+    <div class="share-btn col-md-4">
+      <ul>
+        <li>シェアする</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="contents-image row">
+    <div class="col-xs-12"></div>
+  </div>
+  <div class="contents-description row">
+    <div class="col-xs-12">
+      <h3>制作会社・製作者名：</h3>
+      <h3>サービスの説明</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="review-all col-md-9">
+      <div class="col-sm-6">
+        <h3>レビュー一覧</h3>
+      </div>
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-success" href="#">レビューを投稿する</button>
+      </div>
+    </div>
+
+    <div class="sidebar col-md-3">
+      <%= render "shared/sidebar_recent_post" %>
+    </div>
+  </div>
+</div>

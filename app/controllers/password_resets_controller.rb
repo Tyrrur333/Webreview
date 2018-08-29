@@ -35,11 +35,6 @@ class PasswordResetsController < ApplicationController
     end
   end
 
-  #パスワード再設定の期限が切れている場合はtrueを返す
-  def password_reset_expired?
-    reset_sent_at < 2.hours.ago
-  end
-
   private
 
     def user_params

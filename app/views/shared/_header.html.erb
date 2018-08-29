@@ -17,13 +17,13 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
-              <li><%= link_to(content_tag(:i, 'Webサービスの登録', class: 'fas fa-plus-square'), '#') %></li>
+              <li><%= link_to(content_tag(:i, 'Webサービスの登録', class: 'fas fa-plus-square'), appposts_edit_path) %></li>
               <li><%= link_to(content_tag(:i, 'プロフィール', class: 'fas far fa-user'), current_user) %></li>
               <li><%= link_to(content_tag(:i, 'ログアウト', class: 'fas fa-sign-out-alt'), logout_path, method: :delete) %></li>
             <% else %>
               <li><%= link_to(content_tag(:i, 'ログイン',         class: 'fas fa-sign-in-alt'), login_path) %></li>
               <li><%= link_to(content_tag(:i, '新規登録',         class: 'fas fa-user-plus'), signup_path) %></li>
-              <li><%= link_to(content_tag(:i, 'Webサービスの登録', class: 'fas fa-plus-square'), '#') %></li>
+              <li><%= link_to(content_tag(:i, 'Webサービスの登録', class: 'fas fa-plus-square'), appposts_edit_path) %></li>
             <% end %>
           </ul>
         </div><!--/.nav-collapse -->

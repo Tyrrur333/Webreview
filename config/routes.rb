@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'appposts/index'
+  get 'appposts/show'
+  get 'appposts/new'
+  get 'appposts/edit'
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'sessions/new'
@@ -16,4 +20,6 @@ Rails.application.routes.draw do
   resources :users,               only: [:show, :new, :create, :edit, :update]
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
+
+  resources :appposts
 end
