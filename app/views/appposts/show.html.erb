@@ -2,14 +2,11 @@
 
 <div class="webservice-show container">
   <div class="contents-top row">
-    <div class=" col-md-4">
-      <ul>
-        <li>Webサービス名</li>
-        <li>URL:</li>
-      </ul>
-    </div>
-    <div class=" col-md-4">
-      ★★★★★
+    <div class=" col-md-8">
+      <h3><%= @apppost.app_name %></h3>
+      <h4>URL:<%= @apppost.url %></h4>
+
+      <p>★★★★★</p>
       <p>お気に入りに追加する</p>
     </div>
     <div class="share-btn col-md-4">
@@ -20,13 +17,17 @@
   </div>
 
   <div class="contents-image row">
-    <div class="col-xs-12"></div>
+    <div class="col-xs-12">
+      <%= image_tag @apppost.app_image.to_s %>
+    </div>
   </div>
   <div class="contents-description row">
     <div class="col-xs-12">
-      <h3>制作会社・製作者名：</h3>
+      <h3>制作会社・製作者名：<%= @apppost.author %></h3>
       <h3>サービスの説明</h3>
+      <p><%= @apppost.description %></p>
     </div>
+    <%=link_to "編集する", edit_apppost_path(@apppost.id), class: "pull-right" %>
   </div>
 
   <div class="row">

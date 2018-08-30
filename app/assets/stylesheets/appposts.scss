@@ -6,3 +6,42 @@
 ul li {
   list-style: none;
 }
+
+//index
+
+.all_app {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+}
+
+.all_app p {
+  border-bottom: 1px solid #ccc;
+}
+
+.all_app img {
+  width: 20%;
+  object-fit: contain;
+}
+
+//edit
+.web-service-post ul li {
+  margin-bottom: 10px;
+}
+
+
+//show
+.contents-image img {
+  width: 70%;
+  object-fit: contain;
+}
+
+.contents-description {
+  margin-bottom: 50px;
+}
+
+

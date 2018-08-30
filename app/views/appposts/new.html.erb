@@ -1,2 +1,38 @@
-<h1>Appposts#new</h1>
-<p>Find me in app/views/appposts/new.html.erb</p>
+<%= stylesheet_link_tag 'appposts',  :media => "all" ,'data-turbolinks-track': 'reload' %>
+
+<div class="container">
+  <h2>Webサービスを登録する</h2>
+
+  <div class="web-service-post">
+    <%= form_for (@apppost) do |f| %>
+      <div class="service-post-contents col-md-6 col-md-offset-1">
+        <ul>
+          <%= render 'shared/error_messages_post' %>
+          <li><%= f.label :app_name, "Webサービス名" %></li>
+          <li><%= f.text_field :app_name, class: "form-control" %></li>
+
+          <li><%= f.label :url, "登録サイトのURL" %></li>
+          <li><%= f.text_area :url, class: "form-control" %></li>
+
+          <li><%= f.label :category, "カテゴリ" %></li>
+          <li><%= f.text_field :category, class: "form-control" %></li>
+
+          <li><%= f.label :app_image, "表示するサムネイル" %></li>
+          <li><%= f.file_field :app_image, class: "form-control" %></li>
+
+          <li><%= f.label :author, "製作会社・製作社名" %></li>
+          <li><%= f.text_field :author, class: "form-control" %></li>
+
+          <li><%= f.label :description, "Webサービスの概要" %></li>
+          <li><%= f.text_area :description, class: "form-control" %></li>
+
+          <li><%= f.submit "変更を保存する", class: "btn btn-success" %></li>
+
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+

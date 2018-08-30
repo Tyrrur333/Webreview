@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
+  root 'tops#home'
+
   get 'appposts/index'
   get 'appposts/show'
   get 'appposts/new'
   get 'appposts/edit'
+
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'sessions/new'
-  root 'tops#home'
+
 
   get '/contact',       to: 'tops#contact'
   get 'privacy_policy', to: 'tops#privacy_policy'
@@ -22,4 +25,5 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
 
   resources :appposts
+
 end

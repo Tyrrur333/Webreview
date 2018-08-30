@@ -1,2 +1,21 @@
-<h1>Appposts#index</h1>
-<p>Find me in app/views/appposts/index.html.erb</p>
+<%= stylesheet_link_tag 'appposts',  :media => "all" ,'data-turbolinks-track': 'reload' %>
+
+<div class="container">
+  <h1>サービス一覧</h1>
+
+  <div class="row">
+    <ul class="all_app">
+      <% @appposts.each do |apppost| %>
+        <%= image_tag apppost.app_image.to_s %>
+        <li>
+
+          <%= link_to apppost.app_name, apppost %>
+          <%= apppost.url %>
+
+        </li>
+        <p><%= apppost.description %></p>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
