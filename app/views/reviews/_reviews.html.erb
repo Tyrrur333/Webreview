@@ -1,7 +1,7 @@
-<li id="reviews-<%= @reviews.id %>">
+<div class="reviews">
   <%= image_tag @reviews.user.image.to_s %>
   <span class="user"><%= link_to @reviews.user.name, @reviews.user %></span>
   <span><%= @reviews.stars  %></span>
   <span class="title"><%= @reviews.review_title %></span>
   <span class="content"><%= @reviews.review_content %></span>
-</li>
+</div>

@@ -34,11 +34,10 @@
     <div class="review-all col-md-9">
       <div class="col-sm-6">
         <h3>レビュー一覧</h3>
-
+        <%= render "reviews/reviews" %>
       </div>
       <div class="col-sm-6">
         <%= link_to "レビューを投稿する", new_apppost_review_path(@apppost.id), class: 'btn btn-success' %>
-        <%= render "reviews/reviews" %>
       </div>
     </div>
 
