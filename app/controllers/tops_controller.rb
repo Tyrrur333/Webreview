@@ -1,5 +1,6 @@
 class TopsController < ApplicationController
   def home
+    @appposts = Apppost.all
   end
 
   def contact

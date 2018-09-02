@@ -1,0 +1,26 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@import "header_footer";
+
+
+.app-info {
+  padding-bottom: 30px;
+  border-bottom: solid 1px #ccc;
+}
+
+.app-info img {
+  width: 300px;
+}
+
+.app-info p {
+  margin-left: 20px ;
+}
+
+.web-service-review {
+  margin-top: 30px;
+}
+
+.service-review-contents .btn {
+  margin-top: 20px;
+}

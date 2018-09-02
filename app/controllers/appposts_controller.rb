@@ -5,7 +5,9 @@ class ApppostsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
     @apppost = Apppost.find(params[:id])
+    @reviews = current_user.reviews.build if logged_in?
   end
 
   def new
