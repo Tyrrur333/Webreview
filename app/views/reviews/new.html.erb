@@ -24,10 +24,10 @@
           <%= render 'shared/error_messages_review' %>
 
 
-            <div id="stars">
-              <li><%= f.label :stars, "総合評価" %></li>
-              <%= f.hidden_field :stars, id: :stars %>
-            </div>
+          <div id="stars">
+            <li><%= f.label :stars, "総合評価" %></li>
+            <%= f.hidden_field :stars, id: :book_rating %>
+          </div>
 
 
           <li><%= f.label :review_title, "レビューのタイトル" %></li>
@@ -51,7 +51,10 @@
         size     : 36,
         starOff:  '<%= asset_path('star-off.png') %>',
         starOn : '<%= asset_path('star-on.png') %>',
-        scoreName: 'review[star]'
+        scoreName: 'review[star]',
+        click: function(score, e) {
+            $("#book_rating").val(score)
+        }
     });
 </script>
 

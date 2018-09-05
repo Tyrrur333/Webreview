@@ -5,20 +5,18 @@
     <div class=" col-md-8">
       <h3 class="app-name"><%= @apppost.app_name %></h3>
       <h4 class="app-url">URL:<%= @apppost.url %></h4>
-
       <p>★★★★★</p>
       <p>お気に入りに追加する</p>
-    </div>
-    <div class="share-btn col-md-4">
-      <ul>
-        <li>シェアする</li>
-      </ul>
     </div>
   </div>
 
   <div class="row">
     <div class="contents-image col-xs-9">
       <%= image_tag @apppost.app_image.to_s %>
+      <h3>制作会社・製作者名：<%= @apppost.author %></h3>
+      <h3>サービスの説明</h3>
+      <p><%= @apppost.description %></p>
+      <%= link_to "編集する", edit_apppost_path(@apppost.id), class: "pull-right" %>
     </div>
       <div class="sidebar col-md-3">
         <%= render "shared/sidebar_recent_post" %>
@@ -26,10 +24,7 @@
   </div>
   <div class="contents-description row">
     <div class="col-xs-9">
-      <h3>制作会社・製作者名：<%= @apppost.author %></h3>
-      <h3>サービスの説明</h3>
-      <p><%= @apppost.description %></p>
-      <%= link_to "編集する", edit_apppost_path(@apppost.id), class: "pull-right" %>
+
     </div>
 
   </div>
