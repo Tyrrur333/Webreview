@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'favorites/create'
+  get 'favorites/destroy'
   root 'tops#home'
 
   get 'appposts/index'
@@ -30,4 +32,8 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+  resources :appposts do
+    post 'add' => 'favorites#create'
+    delete '/add' => 'favorites#destroy'
+  end
 end

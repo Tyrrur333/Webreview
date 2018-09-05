@@ -6,7 +6,13 @@
       <h3 class="app-name"><%= @apppost.app_name %></h3>
       <h4 class="app-url">URL:<%= @apppost.url %></h4>
       <p>★★★★★</p>
-      <p>お気に入りに追加する</p>
+      <div class="favorite">
+        <% if !Favorite.exists?(user_id:current_user.id,apppost_id:@apppost.id) %>
+          <%= link_to "お気に入りに追加する",apppost_add_path(@apppost),method: :post , class: "btn btn-default", style: "margin-bottom: 10px;"%>
+        <% else %>
+          <%= link_to "お気に入り解除",apppost_add_path(@apppost),method: :delete, class: "btn btn-default", style: "margin-bottom: 10px;" %>
+        <% end %>
+      </div>
     </div>
   </div>
 

@@ -16,6 +16,24 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <h2>お気に入り一覧</h2>
+    <% @favorites.each do |favorite| %>
+      <div class="favorites row">
+        <div class="col-md-3">
+          <%= image_tag favorite.apppost.app_image.to_s %>
+        </div>
+        <div class="col-md-8">
+          <ul>
+            <li class="name"><%= link_to favorite.apppost.app_name, favorite.apppost %></li>
+            <li>URL:<%= favorite.apppost.url %></li>
+            <li><%= favorite.apppost.description %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 
 
