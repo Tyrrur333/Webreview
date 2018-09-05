@@ -1,7 +1,23 @@
-<div class="reviews">
-  <%= image_tag @reviews.user.image.to_s %>
-  <span class="user"><%= link_to @reviews.user.name, @reviews.user %></span>
-  <span><%= @reviews.stars  %></span>
-  <span class="title"><%= @reviews.review_title %></span>
-  <span class="content"><%= @reviews.review_content %></span>
+<div class="container">
+  <% @reviews.each do |review| %>
+    <div class="reviews row">
+      <div class="col-md-3">
+        <%= image_tag review.user.image.to_s %>
+      </div>
+      <div class="col-md-8">
+        <ul>
+          <li class="user"><%= link_to review.user.name, review.user %></li>
+          <li>評価:<%= review.stars %></li>
+          <li>レビュータイトル:<%= review.review_title %></li>
+          <li><%= review.review_content %></li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
 </div>
+
+<%= will_paginate @reviews %>
+
+
+
+

@@ -5,9 +5,9 @@ class ApppostsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @apppost = Apppost.find(params[:id])
-    @reviews = current_user.reviews.build if logged_in?
+    @reviews = @apppost.reviews
+    @reviews = Review.paginate(page: params[:page], per_page: 7)
   end
 
   def new

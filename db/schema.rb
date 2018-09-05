@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_02_014112) do
+ActiveRecord::Schema.define(version: 2018_09_04_094615) do
 
   create_table "appposts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "app_name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2018_09_02_014112) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "apppost_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 

@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
 
-  resources :appposts,shallow: true do
+  resources :appposts,shallow: true, param: :id do
     resources :reviews
   end
 

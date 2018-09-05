@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag 'reviews',  :media => "all" ,'data-turbolinks-track': 'reload' %>
+
+<div class="container">
+  <h1><%= @apppost.app_name %>のレビュー一覧</h1>
+
+  <div class="reviews">
+    <% @review.each do |review| %>
+      <ul>
+        <li>評価:<%= review.stars %></li>
+        <li>レビュータイトル:<%= review.review_title %></li>
+        <li><%= review.review_content %></li>
+      </ul>
+    <% end %>
+  </div>
+</div>
+

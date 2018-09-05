@@ -15,14 +15,20 @@
   </div>
 </div>
 
+
 <div class="container">
   <div class="web-service-review">
     <%= form_for [@apppost,@review] do |f| %>
       <div class="service-review-contents col-md-6 col-md-offset-1">
         <ul>
           <%= render 'shared/error_messages_review' %>
-          <li><%= f.label :stars, "総合評価" %></li>
-          <li><%= f.select :stars,options_for_select(1..5), class: "form-control" %></li>
+
+
+            <div id="stars">
+              <li><%= f.label :stars, "総合評価" %></li>
+              <%= f.hidden_field :stars, id: :stars %>
+            </div>
+
 
           <li><%= f.label :review_title, "レビューのタイトル" %></li>
           <li><%= f.text_field :review_title, class: "form-control" %></li>
@@ -30,6 +36,7 @@
           <li><%= f.label :review_content, "レビュー内容" %></li>
           <li><%= f.text_area :review_content, class: "form-control" %></li>
 
+          <%= f.hidden_field :apppost_id, value: @apppost.id %>
 
           <li><%= f.submit "変更を保存する", class: "btn btn-success" %></li>
 
@@ -37,7 +44,16 @@
       </div>
     <% end %>
   </div>
-
 </div>
+
+<script>
+    $('#stars').raty({
+        size     : 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        scoreName: 'review[star]'
+    });
+</script>
+
 
 

@@ -29,9 +29,18 @@ ul li {
 }
 
 //show
-.reviews img {
-  width: 10%;
+
+.reviews {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom:dashed 1px #ccc;
+  width: 70%;
+}
+
+.container .reviews  img {
+  width: 30%;
   border-radius: 100px;
+  border-bottom: solid 1px #ccc;
 }
 
 
