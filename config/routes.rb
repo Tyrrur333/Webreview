@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'appposts/new'
   get 'appposts/edit'
 
+  get 'appposts/category_index',  to: 'appposts#category_index'
+
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'sessions/new'

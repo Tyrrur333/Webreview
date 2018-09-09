@@ -10,4 +10,9 @@ class Apppost < ApplicationRecord
   validates :author, presence: true, length: {maximum: 60}
   validates :description, presence: true, length: {maximum:500}
   mount_uploader :app_image, ImageUploader
+  default_scope -> { order(created_at: :desc) }
+
+  def average_rate
+    average = self.users.pluck(:stars).sum / self.users.count
+  end
 end

@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_09_05_131138) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "apppost_id"
+    t.index ["user_id", "created_at"], name: "index_reviews_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 

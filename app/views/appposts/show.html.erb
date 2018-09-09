@@ -3,14 +3,31 @@
 <div class="webservice-show container">
   <div class="contents-top row">
     <div class=" col-md-8">
-      <h3 class="app-name"><%= @apppost.app_name %></h3>
-      <h4 class="app-url">URL:<%= @apppost.url %></h4>
-      <p>★★★★★</p>
-      <div class="favorite">
-        <% if !Favorite.exists?(user_id:current_user.id,apppost_id:@apppost.id) %>
-          <%= link_to "お気に入りに追加する",apppost_add_path(@apppost),method: :post , class: "btn btn-default", style: "margin-bottom: 10px;"%>
-        <% else %>
-          <%= link_to "お気に入り解除",apppost_add_path(@apppost),method: :delete, class: "btn btn-default", style: "margin-bottom: 10px;" %>
+      <h2 class="app-name"><%= @apppost.app_name %></h2>
+      <h4 class="app-url">URL:<%= link_to @apppost.url, @apppost.url, target: "_blank" %></h4>
+
+      <% unless @apppost.reviews.empty? %>
+        <div class="contents-star">
+          <% star = @apppost.reviews.average(:stars).round.to_i %>
+          <% star.times do %><%=image_tag ("star-on.png") %><% end %>
+          <span style="margin-left: -2px;">
+            <% (5 - star).times do %><%=image_tag ("star-off.png") %><% end %>
+          </span>
+          <%= @apppost.reviews.average(:stars).floor(2) %>
+        </div>
+      <% else %>
+        <%= link_to "レビューがありません", new_apppost_review_path(@apppost.id), class: 'btn' %>
+      <% end %>
+
+      <div class="add-favorite">
+        <% if logged_in? %>
+          <div class="favorite">
+            <% if !Favorite.exists?(user_id:current_user.id,apppost_id:@apppost.id) %>
+              <%= link_to "お気に入りに追加する",apppost_add_path(@apppost),method: :post , class: "btn btn-default", style: "margin-bottom: 10px;"%>
+            <% else %>
+              <%= link_to "お気に入り解除",apppost_add_path(@apppost),method: :delete, class: "btn btn-default", style: "margin-bottom: 10px;" %>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>
@@ -18,33 +35,28 @@
 
   <div class="row">
     <div class="contents-image col-xs-9">
-      <%= image_tag @apppost.app_image.to_s %>
-      <h3>制作会社・製作者名：<%= @apppost.author %></h3>
-      <h3>サービスの説明</h3>
-      <p><%= @apppost.description %></p>
-      <%= link_to "編集する", edit_apppost_path(@apppost.id), class: "pull-right" %>
-    </div>
-      <div class="sidebar col-md-3">
-        <%= render "shared/sidebar_recent_post" %>
-      </div>
-  </div>
-  <div class="contents-description row">
-    <div class="col-xs-9">
+      <%= image_tag @apppost.app_image.to_s, class: "app_image" %>
+      <h3 ><span style="border-bottom: solid 1px #ccc">制作会社・製作者名</span>:<%= @apppost.author %></h3>
+      <h3 class="description-font">サービスの説明</h3>
+      <p style="font-size: 16px;"><%= @apppost.description %></p>
+      <%= link_to "編集する", edit_apppost_path(@apppost.id), class: "pull-right", style: "margin-right: 100px" %>
 
-    </div>
-
-  </div>
-
-  <div class="row">
-      <div class="col-sm-6">
-        <ul>
-            <%= link_to "レビューを投稿する", new_apppost_review_path(@apppost.id), class: 'btn btn-success' %>
+      <div class="row">
+        <div class="col-sm-6">
+          <ul>
+            <%= link_to "レビューを投稿する", new_apppost_review_path(@apppost.id), class: 'btn btn-success',
+                        style: 'margin-top: 50px;' %>
 
             <%#= link_to "レビュー一覧",  apppost_reviews_path(@apppost.id), class: 'btn btn-primary', style: 'margin-top: 20px;' %>
 
             <h3>レビュー一覧</h3>
             <%= render "reviews/reviews" %>
-        </ul>
+          </ul>
+        </div>
       </div>
+    </div>
+    <div class="sidebar col-md-3">
+      <%= render "shared/sidebar_recent_post" %>
+    </div>
   </div>
 </div>

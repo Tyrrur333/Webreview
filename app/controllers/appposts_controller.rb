@@ -4,7 +4,13 @@ class ApppostsController < ApplicationController
     @appposts = Apppost.all
   end
 
+  def category_index
+    @appposts = Apppost.all
+                    # .where(category_id: params[:category.id])
+  end
+
   def show
+    @recent_post = Apppost.limit(5).order('id DESC')
     @apppost = Apppost.find(params[:id])
     @reviews = @apppost.reviews
     @reviews = Review.paginate(page: params[:page], per_page: 7)

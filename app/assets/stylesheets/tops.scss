@@ -86,40 +86,17 @@ main {
   }
 }
 
-.top-wrapper .input-group {
-  margin-top: 40px;
-  width: 900px;
-  @media (max-width: 1000px) {
-    width: 700px;
-  }
-  @media (max-width: 360px) {
-    width: 360px;
-  }
+//カテゴリから探す
+.find-category {
+  border: solid 1px #CCC;
+  padding: 0;
+  height: 100px;
+  width: 100%;
 }
 
-.top-wrapper .input-group .form-control {
-  width: 700px;
-  margin-left: 80px;
-  @media (max-width: 1000px) {
-    width: 400px;
-  }
-  @media (max-width: 600px) {
-    width: 200px;
-    margin-left: 150px;
-  }
-  @media (max-width: 360px) {
-    width: 100px;
-    margin-left: 100px;
-  }
-}
-
-.top-wrapper .form-control {
-  height: 50px;
-}
-
-.top-wrapper .btn {
-  font-size: 18px;
-  height: 50px;
+//注目・人気のサイト
+.attention-posts {
+  margin-top: 50px;
 }
 
 //右の最近の投稿
@@ -134,25 +111,14 @@ main {
 }
 
 .recent-contents {
-  border: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
   max-width: 300px;
   height: auto;
+  margin-left: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  text-align: left;
 }
-
-
-
-//カテゴリから探す
-.find-category {
-  border: solid 1px #CCC;
-  padding: 0;
-  height: 100px;
-  width: 100%;
-}
-
-//新しく登録されたサイト
-.new-registration {
-}
-
 
 
 //フッター

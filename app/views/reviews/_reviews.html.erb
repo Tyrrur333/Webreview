@@ -1,18 +1,29 @@
 <div class="container">
   <% @reviews.each do |review| %>
-    <div class="reviews row">
-      <div class="col-md-3">
-        <%= image_tag review.user.image.to_s %>
+    <% if review.apppost_id === @apppost.id%>
+      <div class="reviews row">
+        <div class="col-md-3">
+          <%= image_tag review.user.image.to_s, class: "user-img" %>
+        </div>
+        <div class="col-md-8">
+          <ul>
+            <li class="user"><%= link_to review.user.name, review.user %></li>
+            <li>
+              評価:
+                <% 5.times do |i| %>
+                  <% if review.stars > i then %>
+                    <%=image_tag ("star-on.png") %>
+                  <% else %>
+                    <%=image_tag ("star-off.png") %>
+                  <% end %>
+                <% end %>
+            </li>
+            <li>タイトル:<%= review.review_title %></li>
+            <li><%= review.review_content %></li>
+          </ul>
+        </div>
       </div>
-      <div class="col-md-8">
-        <ul>
-          <li class="user"><%= link_to review.user.name, review.user %></li>
-          <li>評価:<%= review.stars %></li>
-          <li>レビュータイトル:<%= review.review_title %></li>
-          <li><%= review.review_content %></li>
-        </ul>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
 

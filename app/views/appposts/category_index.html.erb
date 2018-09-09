@@ -1,9 +1,10 @@
 <%= stylesheet_link_tag 'appposts',  :media => "all" ,'data-turbolinks-track': 'reload' %>
 
 <div class="container" style="max-width: 1000px;">
-  <h1 style="margin-bottom: 20px;">サービス一覧</h1>
+  <h1 style="margin-bottom: 20px;">カテゴリ:一覧</h1>
 
   <% @appposts.each do |apppost| %>
+
     <div class="all_app row">
       <div class="app_images col-md-4 center-block">
         <%=link_to  (image_tag apppost.app_image.to_s) , apppost %>

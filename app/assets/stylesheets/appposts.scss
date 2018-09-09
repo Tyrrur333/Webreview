@@ -11,24 +11,45 @@ ul li {
 
 .all_app {
   list-style: none;
-  margin: 0;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
   li {
     overflow: auto;
     padding: 10px 0;
-    font-size: 16px;
   }
 }
 
-.all_app p {
-  border-bottom: 1px solid #ccc;
-}
-
 .all_app img {
-  width: 20%;
+  width: 80%;
   object-fit: contain;
 }
 
 //show
+.contents-star {
+  margin-bottom: 10px;
+}
+
+.add-favorite {
+  border-bottom: solid 1px #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.contents-image .app_image {
+  width: 70%;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.contents-image .description-font {
+  border-bottom: 1px solid #ccc;
+  max-width: 170px;
+}
+
+.contents-description {
+  margin-bottom: 50px;
+}
 
 .reviews {
   margin-top: 20px;
@@ -37,13 +58,33 @@ ul li {
   width: 70%;
 }
 
-.container .reviews  img {
-  width: 30%;
-  border-radius: 100px;
+.container .reviews .user-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
   border-bottom: solid 1px #ccc;
 }
 
+//右の最近の投稿
+.right-recent-posts {
+  margin-top: 20px;
+  margin-right: 100px;
+  width: 100%;
+}
 
+.right-recent-posts .input-group {
+  margin-left: 0;
+}
+
+.recent-contents {
+  border-bottom: solid 1px #ccc;
+  max-width: 300px;
+  height: auto;
+  margin-left: 0;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+}
 
 //edit
 .web-service-post ul li {
@@ -51,14 +92,5 @@ ul li {
 }
 
 
-//show
-.contents-image img {
-  width: 70%;
-  object-fit: contain;
-}
-
-.contents-description {
-  margin-bottom: 50px;
-}
 
 

@@ -1,18 +1,20 @@
 <!--  右の最近の投稿-->
 <div class="right-recent-posts">
-  <div class="input-group center-block col-md-10">
-    <input type="text" class="form-control" placeholder="サービス名orカテゴリを入力">
-    <span class="input-group-btn center-block">
-      <button type="button" class="btn btn-primary"><span>検索</span></button>
-    </span>
-  </div>
   <div class="recent-posts">
-    <h3>最近の投稿</h3>
-    <div class="recent-contents">
-      <ul>
-
-      </ul>
-    </div>
+    <h3 style="border-bottom:solid 1px #ccc; max-width: 120px ">最近の投稿</h3>
+    <% @recent_post.each do |apppost| %>
+      <div class="recent-contents">
+        <div class="recent-img">
+          <%=image_tag apppost.app_image.to_s ,style: "width: 100%;" %>
+        </div>
+        <div class="recent-content" style="width: 100%">
+          <ul style="text-decoration: none; margin-top: 10px;">
+            <li><%= link_to apppost.app_name, apppost %></li>
+            <li>URL:<%= link_to apppost.url, apppost.url, target: "_blank" %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
