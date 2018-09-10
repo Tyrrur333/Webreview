@@ -5,6 +5,7 @@ class TopsController < ApplicationController
     @recent_post = Apppost.limit(5).order('id DESC')
 
     @attention_post = Apppost.joins(:reviews).order('@review_count desc').limit(7)
+    @category = Category.all
   end
 
   def contact

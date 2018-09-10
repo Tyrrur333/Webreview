@@ -13,7 +13,7 @@
         <ul>
           <li><%= link_to apppost.app_name, apppost %></li>
           <li>URL:<%= link_to apppost.url, apppost.url, target: "_blank" %></li>
-          <li>カテゴリ:<%= apppost.category %></li>
+          <li>カテゴリ:<%= apppost.category.name %></li>
         </ul>
       </div>
       <div class="col-md-12" style="margin-top:10px ">

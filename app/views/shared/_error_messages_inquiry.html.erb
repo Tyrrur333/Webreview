@@ -1,0 +1,10 @@
+<% if @inquiry.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% @inquiry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+

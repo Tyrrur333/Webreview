@@ -1,8 +1,9 @@
 class Apppost < ApplicationRecord
   has_many :reviews
+  belongs_to :category
   attr_accessor :apppost
   validates :app_name, presence: true, length: {maximum: 60}
-  validates :category, presence: true, length: {maximum: 30}
+  validates :category_id, presence: true
   validates :url,presence: true, length: {maximum: 255},
             format: /\A#{URI::regexp(%w(http https))}\z/,
             uniqueness: { case_sensitive: false }, allow_nil: true

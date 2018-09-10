@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag "custom", :media => "all" %>
+
+<div class="contact">
+  <div class="container">
+    <h1>お問い合わせ</h1>
+
+    <form>
+      <%= form_for @inquiry, :url => inquiry_thanks_path do |f| %>
+        <div class="form-group">
+          <ul>
+            <%= render 'shared/error_messages_inquiry' %>
+            <li><%= f.hidden_field :email %></li>
+            <li><%= f.text_field :email, class: "form-control", id: "exampleFormControlInput1", placeholder: "例）review@example.com" %></li>
+
+            <li><%= f.hidden_field :contents  %></li>
+            <li><%= f.text_area :contents, class: "form-control", id: "exampleFormControlTextarea1", rows: 3 %></li>
+
+            <li><%= f.submit "送信する", class: "btn btn-primary" ,style: "margin-top: 10px;"%></li>
+          </ul>
+        </div>
+      <% end %>
+    </form>
+  </div>
+</div>

@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   get 'favorites/destroy'
   root 'tops#home'
 
-  get 'appposts/index'
-  get 'appposts/show'
   get 'appposts/new'
+  get 'appposts/show'
+  get 'appposts/index'
   get 'appposts/edit'
 
-  get 'appposts/category_index',  to: 'appposts#category_index'
+
 
   get 'password_resets/new'
   get 'password_resets/edit'
@@ -38,4 +38,8 @@ Rails.application.routes.draw do
     post 'add' => 'favorites#create'
     delete '/add' => 'favorites#destroy'
   end
+
+  resources :inquiry, only: [:new, :create]
+
+  get 'appposts/category_index/:category_id',  to: 'appposts#category_index', as: 'category_index'
 end

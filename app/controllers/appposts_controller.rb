@@ -1,19 +1,19 @@
 class ApppostsController < ApplicationController
-  before_action :logged_in_user, only:[:new, :edit, :update]
+  before_action :logged_in_user, only:[:edit, :update]
   def index
     @appposts = Apppost.all
   end
 
   def category_index
-    @appposts = Apppost.all
-                    # .where(category_id: params[:category.id])
+    @appposts = Apppost.all.where(category_id: params[:category_id])
+    @categories = Category.all
   end
 
   def show
     @recent_post = Apppost.limit(5).order('id DESC')
     @apppost = Apppost.find(params[:id])
     @reviews = @apppost.reviews
-    @reviews = Review.paginate(page: params[:page], per_page: 7)
+    @review = Review.paginate(page: params[:page], per_page: 7)
   end
 
   def new
@@ -46,7 +46,7 @@ class ApppostsController < ApplicationController
 
   private
     def apppost_params
-      params.require(:apppost).permit(:app_name, :url, :category, :app_image, :author, :description)
+      params.require(:apppost).permit(:app_name, :url, :category, :app_image, :author, :description, :apppost_id, :category_id )
     end
 
     # ログイン済みユーザーかどうか確認

@@ -12,7 +12,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to  (image_tag 'logo (3).png' , style: "max-width: 30%; padding-top: 10px;") , root_path %>
+          <%= link_to  (image_tag 'logo (3).png' , style: "max-width: 30%; margin-top: 10px;") , root_path %>
 
         </div>
 
@@ -21,7 +21,7 @@
 
             <% if logged_in? %>
               <li><%= link_to(content_tag(:i, 'Webサービス一覧', class: 'fas far fa-list-alt'), appposts_index_path) %></li>
-              <li><%= link_to(content_tag(:i, 'Webサービスの登録', class: 'fas fa-plus-square'), appposts_new_path) %></li>
+              <li><%= link_to(content_tag(:i, 'Webサービスの登録', class: 'fas fa-plus-square'), new_apppost_path) %></li>
               <li><%= link_to(content_tag(:i, 'プロフィール', class: 'fas far fa-user'), current_user) %></li>
               <li><%= link_to(content_tag(:i, 'ログアウト', class: 'fas fa-sign-out-alt'), logout_path, method: :delete) %></li>
             <% else %>

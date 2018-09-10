@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+  before_action :logged_in_user, only:[:new]
   def create
     @user = current_user
     @apppost = Apppost.find(params[:apppost_id])

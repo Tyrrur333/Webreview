@@ -4,7 +4,8 @@
   <div class="contents-top row">
     <div class=" col-md-8">
       <h2 class="app-name"><%= @apppost.app_name %></h2>
-      <h4 class="app-url">URL:<%= link_to @apppost.url, @apppost.url, target: "_blank" %></h4>
+      <h4 class="app-url">URL:<%= link_to @apppost.url, @apppost.url, target: "_blank" %> <span style="font-size: 14px;">(新規タブで開きます)</span></h4>
+      <p><%= link_to @apppost.category.name  %></p>
 
       <% unless @apppost.reviews.empty? %>
         <div class="contents-star">

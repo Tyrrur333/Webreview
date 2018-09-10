@@ -14,8 +14,8 @@
           <li><%= f.label :url, "登録サイトのURL" %></li>
           <li><%= f.text_area :url, class: "form-control" %></li>
 
-          <li><%= f.label :category, "カテゴリ" %></li>
-          <li><%= f.text_field :category, class: "form-control" %></li>
+          <li><%= f.label :category_id, "カテゴリ" %></li>
+          <li><%= f.collection_select :category_id, Category.all, :id, :name ,:prompt => "カテゴリを選択してください" %></li>
 
           <li><%= f.label :app_image, "表示するサムネイル" %></li>
           <li><%= f.file_field :app_image, class: "form-control" %></li>
