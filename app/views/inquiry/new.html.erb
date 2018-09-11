@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag "custom", :media => "all" %>
+<% provide(:title, 'お問い合わせ') %>
 
 <div class="contact">
   <div class="container">
@@ -7,17 +8,17 @@
 
     <p>送れない場合は<a style="text-decoration: none">eebreview32985@ahk.jp</a>へ</p>
     <form>
-      <%= form_for @inquiry, :url => {:action => :create} do |f| %>
+      <%= form_for @inquiry ,url:  inquiry_index_path  do |f| %>
         <div class="form-group">
           <ul>
             <%= render 'shared/error_messages_inquiry' %>
             <li><%= f.label :email, "メールアドレス（必須）" %></li>
-            <li><%= f.email_field :email, class: "form-control", id: "exampleFormControlInput1", placeholder: "例）review@example.com" %></li>
+            <li><%= f.email_field :email, class: "form-control", placeholder: "例）review@example.com" %></li>
 
             <li><%= f.label :contents, "お問い合わせ内容" %></li>
-            <li><%= f.text_area :contents, class: "form-control", id: "exampleFormControlTextarea1", rows: 3 %></li>
+            <li><%= f.text_area :contents, class: "form-control", rows: 3 %></li>
 
-            <li><%= f.submit "送信する", class: "btn btn-primary" ,style: "margin-top: 10px;"%></li>
+            <li><%= f.submit "送信する", class: "btn btn-primary", style: "margin-top: 10px;"%></li>
           </ul>
         </div>
       <% end %>

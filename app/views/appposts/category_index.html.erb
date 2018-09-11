@@ -1,11 +1,14 @@
 <%= stylesheet_link_tag 'appposts',  :media => "all" ,'data-turbolinks-track': 'reload' %>
+<% provide(:title, 'カテゴリ一覧') %>
+
 
 <div class="container" style="max-width: 1000px;">
+  <h1 style="margin-bottom: 20px;">カテゴリ一覧</h1>
   <% @categories.each do |category| %>
     <% @appposts.each do |apppost| %>
 
       <% if  apppost.category_id === category.id %>
-        <h1 style="margin-bottom: 20px;">カテゴリ:<%= apppost.category.name %>一覧</h1>
+        <h3 style="margin-bottom: 20px;">カテゴリ:<%= apppost.category.name %></h3>
         <div class="all_app row">
           <div class="app_images col-md-4 center-block">
             <%=link_to  (image_tag apppost.app_image.to_s) , apppost %>
@@ -15,7 +18,7 @@
             <ul>
               <li><%= link_to apppost.app_name, apppost %></li>
               <li>URL:<%= link_to apppost.url, apppost.url, target: "_blank" %></li>
-              <li>カテゴリ:<%= apppost.category.name %></li>
+              <li>カテゴリ: <%= apppost.category.name %></li>
             </ul>
           </div>
           <div class="col-md-12" style="margin-top:10px ">

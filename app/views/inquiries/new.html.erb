@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "custom", :media => "all" %>
+<% provide(:title, 'お問い合わせ') %>
+
+<div class="contact">
+  <div class="container">
+    <h1>お問い合わせ</h1>
+    <h4>このサービスに関するお問い合わせ・不具合は以下のお問い合わせフォームにてご連絡ください。</h4>
+
+    <p>送れない場合は<a style="text-decoration: none">eebreview32985@ahk.jp</a>へ</p>
+    <%= form_for @inquiry do |f| %>
+      <div class="form-group">
+        <ul>
+          <%= render 'shared/error_messages_inquiry' %>
+          <li><%= f.label :email, "メールアドレス（必須）" %></li>
+          <li><%= f.email_field :email, class: "form-control", placeholder: "例）review@example.com" %></li>
+
+          <li><%= f.label :contents, "お問い合わせ内容" %></li>
+          <li><%= f.text_area :contents, class: "form-control", rows: 3 %></li>
+
+          <li><%= f.submit "送信する", class: "btn btn-primary", style: "margin-top: 10px;"%></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

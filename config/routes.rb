@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  get 'favorites/create'
-  get 'favorites/destroy'
+
   root 'tops#home'
 
-  get 'appposts/new'
-  get 'appposts/show'
-  get 'appposts/index'
-  get 'appposts/edit'
+  # get 'appposts/new'
+  # get 'appposts/show'
+   get 'appposts/index'
+  # get 'appposts/edit'
 
 
 
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
 
-  get '/contact',       to: 'tops#contact'
+  # get '/contact',       to: 'tops#contact'
   get 'privacy_policy', to: 'tops#privacy_policy'
   get 'terms_of_use',   to: 'tops#terms_of_use'
   get '/signup',        to: 'users#new'
@@ -23,6 +22,12 @@ Rails.application.routes.draw do
   get '/login',         to: 'sessions#new'
   post '/login',        to: 'sessions#create'
   delete '/logout',     to: 'sessions#destroy'
+
+  get 'inquiries/new'
+  post 'inquiries/create'
+
+  get 'favorites/create'
+  get 'favorites/destroy'
 
 
 
@@ -39,7 +44,7 @@ Rails.application.routes.draw do
     delete '/add' => 'favorites#destroy'
   end
 
-  resources :inquiry, only: [:new, :create]
+  resources :inquiries, only: [:new, :create]
 
   get 'appposts/category_index/:category_id',  to: 'appposts#category_index', as: 'category_index'
 end
